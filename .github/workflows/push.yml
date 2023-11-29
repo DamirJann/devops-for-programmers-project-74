@@ -9,6 +9,7 @@ jobs:
       - run: make test
 
   image-push:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: make image-push
