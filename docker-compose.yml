@@ -6,5 +6,15 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.production
-    command: npm test
-
+    command: bash -c 'npm test'
+    depends_on:
+      db:
+        condition: service_healthy
+  db: 
+    image: postgres
+    healthcheck:
+      test: pg_isready -U postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
