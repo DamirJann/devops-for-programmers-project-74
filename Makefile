@@ -1,7 +1,3 @@
-DOCKER_USERNAME=damirpilacis
-DOCKER_PASSWORD=dckr_pat_c-TFitXqAzYeFJ-i5-uUbbJ_gow
-
-
 dev-run:
 	docker-compose -f docker-compose.override.yml up app  
 
