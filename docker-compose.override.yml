@@ -4,7 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile 
     command: npm run dev
-    ports:
-      - "8080:8080"
     volumes:
       - "./app:/app"
+  caddy:
+    image: caddy 
+    ports:
+      - "1800:80"
+      - "443:443"
+    volumes: 
+      - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
