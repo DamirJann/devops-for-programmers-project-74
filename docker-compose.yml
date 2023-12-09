@@ -13,7 +13,8 @@ services:
 #      db :
 #        condition: service_healthy
     depends_on:
-      - db
+      db:
+        condition: service_started
     environment:
       - DATABASE_NAME=postgres
       - DATABASE_USERNAME=postgres
