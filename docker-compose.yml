@@ -9,12 +9,9 @@ services:
     command: bash -c 'npm test'
     # из-за этой строчки не проходили тесты...
     # на мой взгляд она более необходимая
-#    depends_on:
-#      db :
-#        condition: service_healthy
     depends_on:
-      db:
-        condition: service_started
+      db :
+        condition: service_healthy
     environment:
       - DATABASE_NAME=postgres
       - DATABASE_USERNAME=postgres
