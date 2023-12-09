@@ -1,5 +1,5 @@
 name: test and build
-on: fork
+on: push
 
 jobs: 
   test:
