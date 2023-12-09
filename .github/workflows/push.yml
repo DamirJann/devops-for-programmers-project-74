@@ -1,8 +1,8 @@
-name: test and build
+name: test and push image
 on: push
 
 jobs: 
-  test:
+  image-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
