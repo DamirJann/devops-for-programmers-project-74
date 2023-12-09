@@ -18,10 +18,6 @@ services:
       - "443:443"
     volumes: 
       - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
-        # db:
-        #extends:
-        # file: docker-compose.yml
-        #service: db
   db: 
     image: postgres
     healthcheck:
