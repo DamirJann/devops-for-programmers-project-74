@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: make image-push DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }} DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}
-    needs: test
+    needs: image-test
