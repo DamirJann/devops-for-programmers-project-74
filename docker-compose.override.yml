@@ -5,9 +5,9 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile 
-    command: bash -c 'sleep 3 && npm start'
+    command: bash -c 'sleep 4 && npm start'
     depends_on:
-      db:
+      db-dev:
         condition: service_healthy
     volumes:
       - "./app:/app"
@@ -18,15 +18,7 @@ services:
       - "443:443"
     volumes: 
       - "./services/caddy/Caddyfile:/etc/caddy/Caddyfile"
-  db:
-    image: postgres
-    healthcheck:
-      test: pg_isready -U postgres
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=postgres
-
-        # extends:
-        # file: docker-compose.yml
-        #service: db
+  db-dev:
+    extends:
+      file: docker-compose.yml
+      service: db
