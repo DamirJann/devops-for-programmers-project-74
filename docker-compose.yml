@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: bash -c 'npm test'
+    volumes:
+      - ".env.example:/app/.env"
     depends_on:
       db:
         condition: service_healthy
