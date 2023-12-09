@@ -11,7 +11,7 @@ module.exports = {
 //   },
 
    production: {
-      dialect: 'sqlite',
+      dialect: 'sqlite'
       storage: './database.test.sqlite',
     },
 
