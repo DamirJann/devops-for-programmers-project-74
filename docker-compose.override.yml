@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
 #  app:
 #    build:
 #      context: .
@@ -12,7 +13,7 @@ services:
 #    volumes:
 #      - "./app:/app"
 #      - ".env.example:/app/.env"
-  caddy:
+  caddy32423:
     image: caddy
     ports:
       - "1800:80"
