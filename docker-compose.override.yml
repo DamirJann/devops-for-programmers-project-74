@@ -12,7 +12,7 @@ services:
 #    volumes:
 #      - "./app:/app"
 #      - ".env.example:/app/.env"
-  caddy32423:
+  caddy:
     image: caddy
 #    ports:
 #      - "1800:80"
